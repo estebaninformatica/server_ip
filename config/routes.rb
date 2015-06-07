@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post 'server/create_update' => 'servers#create_update'
+  get  'server/create_update' => 'servers#create_update'
   get  'server/:name'         => 'servers#show' 
   resources :servers
   # The priority is based upon order of creation: first created -> highest priority.
