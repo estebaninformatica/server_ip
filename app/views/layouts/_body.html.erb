@@ -1,0 +1,23 @@
+<div class="wrapper">
+    
+  <%= render "layouts/application_header" %>
+	
+  <%= render "layouts/application_sidebar" %>
+  <!-- Right side column. Contains the navbar and content of the page -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+    <aside class="principal">
+      <%= yield(:content_header) %>
+      <section class="content">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </section >
+    </aside>
+  </div><!-- ./wrapper -->
+    
+  <%= render "layouts/footer" %>
+  <%#= render "layouts/control_sidebar" %>
+
+</div><!-- ./wrapper -->

@@ -1,28 +1,46 @@
-<p id="notice"><%= notice %></p>
+<% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>Lista <small>servers</small></h1>
 
-<h1>Listing Servers</h1>
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">servers</li>
+    </ol>    
+  </section>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Ip</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <div class="box-tools pull-right">         
+          </div>
+        </div>
+        <div class="box-body">
+          <table class="table table-hover table-simple">
+            <thead>
+              <tr>
+              <th>Name</th>
+              <th>Ip</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= content_tag_for(:tr, @servers) do |server| %>
+              <td><%= server.name %></td>
+              <td><%= server.ip %></td>
+              <td>
+                <div class="btn-group" > 
+                  <%= link_to "<i class='fa fa-times'></i> Borrar".html_safe, server, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-danger"  %>
+                </div>
+              </td>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <tbody>
-    <% @servers.each do |server| %>
-      <tr>
-        <td><%= server.name %></td>
-        <td><%= server.ip %></td>
-        <td><%= link_to 'Show', server %></td>
-        <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Server', new_server_path %>

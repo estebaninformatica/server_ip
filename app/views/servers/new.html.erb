@@ -1,5 +1,13 @@
-<h1>New Server</h1>
+<% content_for :content_header  do %>
+  <section class="content-header">
+    New <small>server</small>
+
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><%= link_to "servers", servers_path %></li>
+      <li class="active">New</li>
+    </ol>
+  </section>
+<% end %>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', servers_path %>

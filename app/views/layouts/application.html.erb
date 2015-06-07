@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IpManager</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Ip Servers</title>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js", "https://oss.maxcdn.com/respond/1.4.2/respond.min.js" %>
+  <![endif]-->
+
+  <%= stylesheet_link_tag "application"%>
+
   <%= csrf_meta_tags %>
+
 </head>
-<body>
+  <body class="skin-blue sidebar-mini ">
 
-<%= yield %>
+    <%= render "layouts/body" %>
 
-</body>
+    <%= javascript_include_tag 'application' %>
+
+   <!-- Modal -->
+   <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Windows</h4>
+         </div>
+         <div class="modal-body">
+             Para usar con ajax
+
+             <div class="form-group">
+            
+             </div>  
+
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+         </div>
+         </form>
+       </div>
+     </div>
+   </div>
+
+  </body>
+    <%= javascript_include_tag params[:controller] %> 
+
 </html>

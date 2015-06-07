@@ -1,0 +1,13 @@
+<script>
+  $.notify.defaults({  autoHide: false });
+  <% flash.each do |name, msg| %>
+    <%if msg.class.name == "Array" %>
+      <% msg.each do |msg| %>
+        $.notify('<%= msg %>', '<%= name == "error" ? "error" : "success" %>');
+      <%end%>
+    <%else%>
+      $.notify('<%= msg %>', '<%= name == "error" ? "error" : "success" %>');
+    <%end%>
+  <%end%>
+  
+</script>
