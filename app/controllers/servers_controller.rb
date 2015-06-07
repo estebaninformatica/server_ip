@@ -19,7 +19,8 @@ class ServersController < ApplicationController
   # GET /servers/new
   def create_update
     @server = Server.find_or_create_by(name: params[:name])
-    @server.ip = params[:ip]
+    @server.ip = request.remote_ip
+    @server.save
     render json: @server
   end
 
