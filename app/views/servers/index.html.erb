@@ -23,6 +23,7 @@
               <tr>
               <th>Name</th>
               <th>Ip</th>
+              <th>Last Update</th>
                 <th></th>
               </tr>
             </thead>
@@ -30,6 +31,7 @@
               <%= content_tag_for(:tr, @servers) do |server| %>
               <td><%= server.name %></td>
               <td><%= server.ip %></td>
+              <td><%= server.updated_at %></td>
               <td>
                 <div class="btn-group" > 
                   <%= link_to "<i class='fa fa-times'></i> Borrar".html_safe, server, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-danger"  %>
